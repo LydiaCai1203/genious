@@ -1,0 +1,12 @@
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+
+dynaconf==3.2.6
+fastapi==0.115.4
+loguru==0.7.2
+milvus_cli==1.0.0
+pymilvus[model]==2.4.3
+pydantic==2.9.2
+requests==2.31.0
+tqdm==4.66.6
+uvicorn==0.32.0
+torch==2.5.1

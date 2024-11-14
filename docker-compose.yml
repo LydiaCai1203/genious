@@ -1,0 +1,26 @@
+version: '2.3'  # for dev
+
+services:
+  vector_searcher:
+    image: swr.cn-east-3.myhuaweicloud.com/flashnews/vector_searcher:v1.0.0
+    container_name: vector_searcher
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 7890:7890
+    environment:
+      - TZ=Asia/Shanghai
+      - HUGGINGFACE_HUB_CACHE=/data/huggingface/hub
+      - HF_ENDPOINT=https://hf-mirror.com
+      - POTIONX_ENV=test
+    volumes:
+      - ./logs:/app/logs
+      - /data/huggingface/hub:/data/huggingface/hub
+    networks:
+      - vector_searcher.network
+
+networks:
+  vector_searcher.network:
+    external: true

@@ -1,0 +1,39 @@
+{
+    "potionx_env": "development",
+  
+    "development": {
+      "host": "0.0.0.0",
+      "port": 7890,
+      "workers": 4,
+      "reload": true,
+      
+      "log_verbose": true,
+      
+      "device": "cpu",
+      "embedding_model": "BAAI/bge-m3",
+
+      "milvus_host": "10.1.0.20",
+      "milvus_port": "19530",
+      "milvus_db": "vector_searcher_dev",
+      "milvus_collection": "test"
+    },
+
+    "test": {
+      "host": "0.0.0.0",
+      "port": 7890,
+      "workers": 4,
+      "reload": true,
+      
+      "log_verbose": true,
+      
+      "device": "cpu",
+      "embedding_model": "BAAI/bge-m3",
+
+      "milvus_host": "10.1.0.20",
+      "milvus_port": "19530",
+      "milvus_db": "vector_searcher_test",
+      "milvus_collection": "concept"
+    },
+
+    "production": {}
+  }
