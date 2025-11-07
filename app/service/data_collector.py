@@ -65,7 +65,7 @@ class DataCollector:
             batch_size = 50
             for i in range(0, len(job_requirements), batch_size):
                 batch = job_requirements[i:i + batch_size]
-                insert_job_requirements(collection=None, job_requirements=batch)
+                insert_job_requirements(job_requirements=batch)
                 logger.info(f"已插入 {min(i + batch_size, len(job_requirements))}/{len(job_requirements)} 条招聘要求")
         
         except Exception as e:

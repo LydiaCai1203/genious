@@ -9,7 +9,13 @@ pydantic==2.9.2
 requests==2.31.0
 tqdm==4.66.6
 uvicorn==0.32.0
-torch>=2.6.0
+anyio>=3.7.0
+# Protobuf 5.x 与当前依赖（FlagEmbedding 等）存在兼容问题，保持在 4.x
+protobuf<5
+# 建议使用 conda 安装 pytorch，对应当前环境 2.0.1；pip 安装时需注意平台兼容性
+torch==2.0.1
+# FlagEmbedding 及 torch 尚未完全兼容 numpy 2.x，保持 1.x 版本
+numpy<2
 
 # 修复 marshmallow 版本冲突（pymilvus 依赖 environs，需要 marshmallow < 3.22）
 marshmallow==3.21.3
