@@ -12,10 +12,18 @@
       "device": "cpu",
       "embedding_model": "BAAI/bge-m3",
 
-      "milvus_host": "10.1.0.20",
+      "milvus_host": "localhost",
       "milvus_port": "19530",
       "milvus_db": "vector_searcher_dev",
-      "milvus_collection": "test"
+      "milvus_collection": "test",
+      "job_requirement_collection": "job_requirements",
+      
+      "llm_type": "deepseek",
+      "deepseek_api_key": "",
+      "deepseek_base_url": "https://api.deepseek.com/v1/chat/completions",
+      "deepseek_model": "deepseek-chat",
+      "openai_api_key": "",
+      "generate_pdf": false
     },
 
     "test": {
@@ -29,10 +37,18 @@
       "device": "cpu",
       "embedding_model": "BAAI/bge-m3",
 
-      "milvus_host": "10.1.0.20",
+      "milvus_host": "localhost",
       "milvus_port": "19530",
       "milvus_db": "vector_searcher_test",
-      "milvus_collection": "concept"
+      "milvus_collection": "concept",
+      "job_requirement_collection": "job_requirements",
+      
+      "llm_type": "deepseek",
+      "deepseek_api_key": "",
+      "deepseek_base_url": "https://api.deepseek.com/v1/chat/completions",
+      "deepseek_model": "deepseek-chat",
+      "openai_api_key": "",
+      "generate_pdf": false
     },
 
     "production": {}

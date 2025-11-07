@@ -128,4 +128,12 @@ class EmbeddingsPool(CachePool):
 
 
 embeddings_pool = EmbeddingsPool(cache_num=1)
-bge_m3_ef = embeddings_pool.load_embeddings(config.embedding_model, config.device)
+# 延迟加载 embedding model，避免在导入时就初始化（可能依赖未安装）
+bge_m3_ef = None
+
+def get_bge_m3_ef():
+    """获取 BGE-M3 embedding function，延迟加载"""
+    global bge_m3_ef
+    if bge_m3_ef is None:
+        bge_m3_ef = embeddings_pool.load_embeddings(config.embedding_model, config.device)
+    return bge_m3_ef
